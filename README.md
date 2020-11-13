@@ -3,11 +3,11 @@ Basic Auth (username/password)  with NextJs + Firebase + Cookies :yum:
 
 ## Getting started
 
-Create a new firebase project
-Create the firestore db and start a collections "Users"
-Get project config keys from firebase settings
-Rename `.env.example` to `.env`.
-Replace the contents of this file with your keys. (The `jwt_secret` can be any string you like).
+- Create a new firebase project
+- Create the firestore db and start a collections "Users"
+- Get project config keys from firebase settings
+- Rename `.env.example` to `.env`.
+- Replace the contents of this file with your keys. (The `jwt_secret` can be any string you like).
 
 
 
