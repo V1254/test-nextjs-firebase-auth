@@ -6,7 +6,16 @@ export default async function (req, res) {
   console.log("nani");
   if (method !== "POST") return res.status(401).json({ message: "no post" });
 
-  const { username, password } = body;
+  let parsedBody;
+
+  try {
+    parsedBody = JSON.parse(body);
+  } catch (e) {
+    // already json
+    parsedBody = body;
+  }
+
+  const { username, password } = parsedBody;
 
   const hashed = await bcrypt.hash(password, 10);
 
@@ -17,6 +26,6 @@ export default async function (req, res) {
 
   res.status(200).json({
     username,
-    password: hashed,
+    msg: "Successfully signed up."
   });
 }

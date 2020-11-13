@@ -8,7 +8,18 @@ export default async function (req, res) {
 
   if (method !== "POST") return res.status(401).json({ message: "only post buddy" });
 
-  const { username, password } = JSON.parse(body);
+  let parsedBody;
+
+  try {
+    parsedBody = JSON.parse(body);
+  } catch (e) {
+    // already json 
+    parsedBody = body;
+  }
+
+  const { username, password } = parsedBody;
+
+  // TODO: make sure the above params actually exist otherwise error :(
 
   const usersRef = firestore.collection("Users");
   const userToLoginSnapshot = await usersRef.where("username", "==", username).get();
