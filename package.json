@@ -8,8 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie": "^0.4.1",
+    "firebase-admin": "^9.4.0",
+    "isomorphic-unfetch": "^3.1.0",
+    "jsonwebtoken": "^8.5.1",
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1"
-  }
+  },
+  "devDependencies": {}
 }
